@@ -29,8 +29,9 @@ $user = JFactory::getUser();
 $lessjs = $this->params->get('lessjs');
 
 // Logo file or site title param
-if ($this->params->get('logoFile')) {
-  $logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
+if ($this->params->get('logo-image')) {
+  $logo = '<img src="' . JUri::root() . $this->params->get('logo-image') . '" alt="' . $sitename . '" '
+          . 'width="'. $this->params->get('logo-width') .'" />';
 } elseif ($this->params->get('sitetitle')) {
   $logo = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle')) . '</span>';
 } else {
@@ -43,6 +44,8 @@ $doc->addScript('templates/' . $this->template . '/js/template.js');
 
 // Add Stylesheets
 $doc->addStyleSheet('templates/' . $this->template . '/css/template.css');
+$doc->addStyleSheet('templates/' . $this->template . '/css/bootstrap.css');
+$doc->addStyleSheet('templates/' . $this->template . '/css/docs.css');
 
 if ($app->isSite()) {
   // disable js

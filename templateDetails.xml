@@ -96,7 +96,29 @@
                        description="Enter JS name seprated with comma to disable." 
                        cols="30" rows="4" />
       </fieldset>
+      <fieldset name="LOGO">
+        <field name="logo-type" type="list" default="image" 
+               label="Logo Type" 
+               description="Choose the type of logo you wish to use">
+          <option value="text">Site Title</option>
+          <option value="image">Image</option>
+        </field>
+        <field name="logo-image" type="media" 
+               label="Logo Image Upload" 
+               description="Upload your logo image" />
+        <field name="logo-width" type="text" default="100" 
+               label="Logo Tagline" 
+               description="Insert Width for logo." filter="string" />
+        <field name="logo-tagline" type="text" default="" 
+               label="Logo Tagline" 
+               description="Insert tagline for logo." filter="string" />
+        <field name="display-tagline" type="list" default="0" 
+               label="Display tagline for text" 
+               description="Display tagline when logo is text.">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </field>
+      </fieldset>
     </fields>
   </config>
-	
 </extension>
